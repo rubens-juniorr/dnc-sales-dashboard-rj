@@ -8,7 +8,7 @@ function FormComponent(props: FormComponentProps) {
       {inputs.map((inputProps, index) => (
         <StyledInput key={index} {...inputProps} />
       ))}
-      {buttons.map((buttonProps, index) => (
+      {StyledButton.map((buttonProps, index) => (
         <button key={index} {...buttonProps} />
       ))}
       {message && (
