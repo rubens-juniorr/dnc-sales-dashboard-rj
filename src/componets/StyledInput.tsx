@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import { InputProps } from '@mui/material'
 import { pxToRem } from '@/uils'
 
-export const StyledInput = styled.input<InputProps>`
+export const StyledInput = styled.input<
+  React.InputHTMLAttributes<HTMLInputElement>
+>`
   background-color: ${(props) => props.theme.textInput.active};
   color: ${(props) => props.theme.textInput.activeColor};
-  border-radios: ${pxToRem(8)};
+  border-radius: ${pxToRem(8)};
   border: ${pxToRem(1)} solid ${(props) => props.theme.textInput.borderColor};
-  box-sizzing: border-box;
+  box-sizing: border-box;
   cursor: pointer;
   height: ${pxToRem(40)};
   font-size: ${pxToRem(14)};
@@ -23,6 +24,7 @@ export const StyledInput = styled.input<InputProps>`
     color: ${(props) => props.theme.textInput.disabledColor};
     cursor: not-allowed;
   }
+
   &::placeholder {
     color: ${(props) => props.theme.textInput.placeholderColor};
   }
