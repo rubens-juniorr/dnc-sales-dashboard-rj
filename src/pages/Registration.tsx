@@ -1,4 +1,11 @@
-import { BannerImage } from '@/components'
+import {
+  BannerImage,
+  FormComponent,
+  StyledH1,
+  StyledP,
+  StyledUl,
+} from '@/components'
+import { pxToRem } from '@/utils'
 import { Box, Container, Grid } from '@mui/material'
 
 function Registration() {
@@ -13,7 +20,30 @@ function Registration() {
             sx={{ alignItems: 'center', display: 'flex', height: '100vh' }}
           >
             <Container maxWidth="sm">
-              <h1>CADASTRO</h1>
+              <Box sx={{ marginBottom: pxToRem(24) }}>LOGO</Box>
+              <Box sx={{ marginBottom: pxToRem(24) }}>
+                <StyledH1>Faça seu cadastro</StyledH1>
+                <StyledP>Primeiro, diga-nos quem você é.</StyledP>
+                <StyledUl>
+                  <li>Entre 8 e 16 caracteres;</li>
+                  <li>Pelo menos uma letra maiúscula;</li>
+                  <li>Pelo menos um caractere especial.</li>
+                  <li>Pelo menos um número</li>
+                </StyledUl>
+              </Box>
+              <FormComponent
+                inputs={[
+                  { type: 'email', placeholder: 'E-mail' },
+                  { type: 'password', placeholder: 'Senha' },
+                ]}
+                buttons={[
+                  { className: 'primary', type: 'submit', children: 'Login' },
+                ]}
+                message={{
+                  msg: 'ERRO!!!',
+                  type: 'error',
+                }}
+              />
             </Container>
           </Grid>
           <Grid item sm={6} sx={{ display: { xs: 'none', sm: 'block' } }}>
